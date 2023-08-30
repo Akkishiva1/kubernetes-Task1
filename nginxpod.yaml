@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dual-nginx-pod
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:latest
+      ports:
+        - containerPort: 80  # Port for the default Nginx container
+    - name: custom-nginx-container
+      image: akkishiva/custom-nginx:v1  # Your custom Nginx image
+      ports:
+        - containerPort: 8081  # Port for the custom Nginx container
+
